@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB || Tarjetas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/img/logoeditado.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style/style2.css">
+    <link rel="stylesheet" href="./assets/style/cards.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body>
+    <div id="app" class="divContenedor">
+        <header class="naav d-flex align-items-center">
+            <div class="navContainer pt-1">
+                <div class="d-flex justify-content-center align-items-center gap-1 divHeader">
+                    <img class="imgLogo" src="./assets/img/index/logoeditado3.gif" alt="logobanco">
+                    <h1 class="headerTitulo  animate__animated animate__zoomIn">Amathystbank</h1>
+                </div>
+                <div class="d-flex gap-4">
+                    <label for="menu" class="navLabel">
+                        <span class="material-symbols-outlined navIcon">menu</span>
+                    </label>
+                    <input type="checkbox" id="menu" class="navInput">
+                    <div class="navMenu  animate__animated animate__zoomIn pt-2">
+<!--                         <a href="./index.html" class="navItem">Inicio</a> -->
+                        <a href="./accounts.html" class="navItem">Cuentas</a>
+                        <a href="#" id="active" class="navItem">Mis tarjetas</a>
+                        <a href="./transfers.html" class="navItem">Transferencias</a>
+                    </div>
+                    <button @Click.prevent="LogOut()" class="botones mt-1">Salir</button>
+                </div>
+            </div>
+        </header>
+        <div class="d-flex flex-column justify-content-between mainContainer">
+
+
+            <main class="main d-flex flex-column gap-2">
+                <div class="divSuperior d-flex justify-content-center align-items-center">
+                    <div class="divSuperior2 d-flex justify-content-between align-items-center flex-wrap">
+                        <h2 class="ps-3 pt-3 pb-1 subTitulo">Mis tarjetas</h2>
+                        <div class="d-flex justify-content-center align-items-center gap-2 ps-3 pe-3">
+                            <div class="d-flex justify-content-center align-items-center contenedorLogoUsuario"><img src="./assets/img/accounts/cuenta5.gif" alt="" class="logoUsuario"></div>
+                            <h3 class="clientTitulo pt-3 pb-1">{{cuentaMelba.firstName+" "+cuentaMelba.lastName}}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center flex-wrap gap-4 animate__animated animate__fadeIn pt-3">
+                    <button @click.prevent="createCards()" class="botonCards" v-if="tarjetasActivas.length<6">Solicitar tarjeta nueva</button>
+                    <button @click="modal = !modal" class="botonCardsEliminar" v-if="tarjetasActivas.length>0">Eliminar tarjeta</button>
+                </div>
+                <div class="d-flex justify-content-evenly flex-wrap gap-3">
+
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex flex-column align-items-center gap-5">
+                            <div v-if="!tarjetasCreditoActivas.length" class="animate__animated animate__fadeIn animate__delay-1s">
+                                <h4 class="tituloTarjetas">No posee tarjetas de Crédito.</h4>
+                            </div>
+                            <img src="./assets/img/cards/noTarjeta.png" alt="imgtarjeta" v-if="!tarjetasCreditoActivas.length" class="sinTarjeta animate__animated animate__fadeIn animate__delay-1s">
+                        </div>
+                    
+                        <div v-if="tarjetasCreditoActivas.length > 0" class="d-flex flex-column gap-3">
+                            <h4 class="tarjetasTitulo text-center animate__animated animate__backInLeft">Sus tarjetas de crédito:</h4>
+
+                            <div class="card1 animate__animated animate__flipInY animate__delay-1s" v-for="credito of tarjetasCreditoActivas">
+                                <div>     
+                                    <div class="card__front card__part" :class="{colorTitaniumCredit: credito.color == 'TITANIUM', colorSilverCredit: credito.color == 'SILVER', colorGoldCredit: credito.color == 'GOLD'}">
+                                        <img src="./assets/img/cards/logoeditado.png" alt="logobanco" class="logoBanco">
+                                        <img class="card__front-logo card__logo" src="./assets/img/cards/Visa-logo.png">
+                                        <p class="card_numer">{{credito.number.replaceAll("-"," ")}}</p>
+                                        <p v-if="credito.color == 'TITANIUM'" class="cardType">{{credito.color}}</p>
+                                        <p v-else-if="credito.color == 'GOLD'" class="cardType2">{{credito.color}}</p>
+                                        <p v-else-if="credito.color == 'SILVER'" class="cardType3">{{credito.color}}</p>
+                                        <div class="card__space-75">
+                                            <span class="card__label">Titular</span>
+                                            <p class="card__info">{{credito.cardholder}}</p>
+                                        </div>
+                                        <div class="card__space-25">
+                                            <span class="card__label">Expira</span>
+                                            <p class="card__info" v-if="credito.truDate > fechaActual">{{modificarFecha(credito.truDate)}}</p>
+                                            <p class="card__info cardVencida" v-if="credito.truDate < fechaActual">{{modificarFecha(credito.truDate)}}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card__back card__part" :class="{colorTitaniumCredit: credito.color == 'TITANIUM', colorSilverCredit: credito.color == 'SILVER', colorGoldCredit: credito.color == 'GOLD'}">
+                                        <div class="card__black-line"></div>
+                                        <div class="card__back-content">
+                                            <div class="card__secret">
+                                                <p class="card__secret--last">{{credito.cvv}}</p>
+                                            </div>
+                                            <img class="card__back-square card__square" src="./assets/img/cards/chiplogo.png">
+                                            <img class="card__back-logo card__logo" src="./assets/img/cards/Visa-logo.png">                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex flex-column align-items-center gap-5">
+                            <div v-if="!tarjetasDebitoActivas.length" class="animate__animated animate__fadeIn animate__delay-1s">
+                                <h4 class="tituloTarjetas">No posee tarjetas de Debito.</h4>
+                            </div>
+                            <img src="./assets/img/cards/noTarjeta.png" alt="imgtarjeta" v-if="!tarjetasDebitoActivas.length" class="sinTarjeta animate__animated animate__fadeIn animate__delay-1s">
+                        </div>
+
+                        <div v-if="tarjetasDebitoActivas.length >0" class="d-flex flex-column gap-3">
+                            <h4 class="tarjetasTitulo text-center animate__animated animate__backInRight">Sus tarjetas de debito:</h4>
+        
+
+                            <div class="card1 animate__animated animate__flipInY animate__delay-1s" v-for="credito of tarjetasDebitoActivas">
+                                <div>     
+                                    <div class="card__front card__part" :class="{colorTitaniumDebit: credito.color == 'TITANIUM', colorSilverDebit: credito.color == 'SILVER', colorGoldDebit: credito.color == 'GOLD'}">
+                                        <img src="./assets/img/cards/logoeditado.png" alt="logobanco" class="logoBanco">
+                                        <img class="card__front-logo card__logo" src="./assets/img/cards/Visa-logo.png">
+                                        <p class="card_numer">{{credito.number.replaceAll("-"," ")}}</p>
+                                        <p v-if="credito.color == 'TITANIUM'" class="cardType">{{credito.color}}</p>
+                                        <p v-else-if="credito.color == 'GOLD'" class="cardType2">{{credito.color}}</p>
+                                        <p v-else-if="credito.color == 'SILVER'" class="cardType3">{{credito.color}}</p>
+                                        <div class="card__space-75">
+                                            <span class="card__label">Titular</span>
+                                            <p class="card__info">{{credito.cardholder}}</p>
+                                        </div>
+                                        <div class="card__space-25">
+                                            <span class="card__label">Expira</span>
+                                            <p class="card__info" v-if="credito.truDate > fechaActual">{{modificarFecha(credito.truDate)}}</p>
+                                            <p class="card__info cardVencida" v-if="credito.truDate < fechaActual">{{modificarFecha(credito.truDate)}}</p>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="card__back card__part" :class="{colorTitaniumDebit: credito.color == 'TITANIUM', colorSilverDebit: credito.color == 'SILVER', colorGoldDebit: credito.color == 'GOLD'}">
+                                        <div class="card__black-line"></div>
+                                        <div class="card__back-content">
+                                            <div class="card__secret">
+                                                <p class="card__secret--last">{{credito.cvv}}</p>
+                                            </div>
+                                            <img class="card__back-square card__square" src="./assets/img/cards/chiplogo.png">
+                                            <img class="card__back-logo card__logo" src="./assets/img/cards/Visa-logo.png">                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal" :class="{'modalShow' : modal}">
+                        <div class="modalContainer">
+                            <div class="d-flex justify-content-end">
+                                <span class="material-symbols-outlined cerrarModal" @click="modal = !modal">close</span>
+                            </div>
+                            <form class="d-flex flex-column gap-3 justify-content-center align-items-center">
+                                <label for="tarjeta" class="labelForm">Numero de tarjeta que desea eliminar: </label>
+                                <select name="tarjeta" id="tarjeta" v-model="numeroTarjeta" class="form-select inputForm">
+                                    <option disabled value="">Seleccione una tarjeta</option>
+                                    <option :value="tarjeta.number" v-for="tarjeta of tarjetasActivas" >{{tarjeta.number}}</option>
+                                </select>
+                                <button @Click.prevent="eliminarTarjetas(), modal = !modal" class="botonCardsEliminar">Eliminar</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+            </main>
+
+            <footer class="footer d-flex flex-column" data-aos="fade-up" data-aos-duration="2000">
+                <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C218.68,174.19 409.99,-10.34 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #4f24b4;"></path></svg></div>
+                <div class="footer2 d-flex p-4 justify-content-center flex-wrap footerContainer">
+                    <div class="d-flex flex-column align-items-center gap-3">
+                        <h4 class="footerTitulo">Unite!</h4>
+                        <a href="https://www.apple.com/la/app-store/" target="_blank"><img class="imgStore" src="./assets/img/logosAppleStores.png" alt="appstore"></a>
+                        <a href="https://play.google.com/" target="_blank"><img class="imgStore" src="./assets/img/logosPlayStores.png" alt="playstore"></a>
+    
+                    </div>
+                    <div class="d-flex flex-column gap-1">
+                        <h4 class="footerTitulo pb-3">¡Contactanos!</h4>
+                        <p class="footerText">De Lunes a Viernes de 08 a 20 hs</p>
+                        <div class="mb-3">
+                            <p class="footerText">A nuestro centro de atención al cliente:</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+08003330500">0800-333-0500</a>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <p class="footerText">Denuncias Mastecard (crédito):</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+01145405800">(011) 4540-5800</a>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <p class="footerText">Denuncias visa (crédito):</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+01144593333">(011) 4459-3333</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="material-symbols-outlined iconColorFooter">mail</span>
+                            <a class="footerAncor2" href="mailto:amathyst@gmail.com">amathystbank@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer3 d-flex justify-content-around align-items-center flex-wrap pt-4 pb-4">
+                    <div class="d-flex gap-4">
+                        <a href="https://www.instagram.com/" target="_blank"><img class="imgFooter" src="./assets/img/iiinstaa.png" alt="instagram"></a>
+                        <a href="https://twitter.com/home" target="_blank"><img class="imgFooter" src="./assets/img/ttwiterr.png" alt="twitter"></a>
+                        <a href="https://www.facebook.com/" target="_blank"><img class="imgFooter" src="./assets/img/faceboook.png" alt="facebook"></a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <p>© 2022 Homebanking S.A. Todos los derechos Reservados.</p>
+                        <a href="#"><span class="material-symbols-outlined footerHome">house</span></a>
+                    </div>
+                    <div class="d-flex gap-3 align-items-center">
+                        <img class="cohort" src="./assets/img/mindhub.jpg" alt="mindhub">
+                        <p>Cohort 34</p>
+                    </div>
+                </div>
+            </footer>
+        </div>      
+    </div>
+    
+
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="./js/cards.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB || Info</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/img/logoeditado.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style/style2.css">
+    <link rel="stylesheet" href="./assets/style/index.css">
+    <link rel="stylesheet" href="./assets/style/information.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://pattern.kivan-works.com/fonts/kredit.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body class="active">
+    <div id="app" class="divContenedor">
+        <header class="naav d-flex align-items-center">
+            <div class="navContainer pt-1" >
+                <div class="d-flex justify-content-center align-items-center gap-1 divHeader">
+                    <img class="imgLogo" src="./assets/img/index/logoeditado3.gif" alt="logobanco">
+                    <h1 class="headerTitulo animate__animated animate__zoomIn" >Amathystbank</h1>
+                </div>
+                <div class="d-flex gap-4">
+                    <label for="menu" class="navLabel">
+                        <span class="material-symbols-outlined navIcon">menu</span>
+                    </label>
+                    <input type="checkbox" id="menu" class="navInput">
+                    <div class="navMenu animate__animated animate__zoomIn pt-2">
+                        <a href="./index.html" class="navItem ">Inicio</a>
+                    </div>
+                    <button @click="modal = !modal" class="botones mt-1">Entrar</button>
+
+                </div>
+            </div>
+        </header>
+        <div class="d-flex flex-column mainContainer">
+            <main class="mainIndex">
+                <div class="d-flex justify-content-center align-items-center pt-2 divSuperior flex-wrap">
+                    <h2 class="ps-3 subTitulo">Información al usuario de servicios financieros</h2>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center pt-4 pb-5">
+                    <div class="informacionContainer d-flex flex-column align-items-center p-4">
+                        <ol class="d-flex flex-column gap-4">
+                            <li>
+                                <h4 class="titulos">Medios para canalizar cualquier consulta y/o reclamo a Brubank:</h4>
+                                <ul class="lista">
+                                    <li>Teléfono: <a href="tel:+0800-333-0500" class="link">0800-333-0500</a></li>
+                                    <li>Mail: <a href="mailto:amathystbank@gmail.com" class="link">amathystbank@gmail.com</a></li>
+                                    <li>Postal: Pueden enviar una carta/nota al domicilio laboral de AmathystBank (Av. Rivadavia 1544) dirigida hacia cualquiera de los Responsables de Atención al Usuario Financiero.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="titulos">Responsables de Atención al Usuario Financiero:</h4>
+                                <ul class="lista">
+                                    <li>Responsable titular: Marta Dilorenzo</li>
+                                    <li>Responsable suplente: Marcos Guzman</li>
+                                    <li>Domicilio laboral: Avenida Libertador 174 – B1638BEN – Vicente López</li>
+                                    <li>Mail: <a href="mailto:amathystbank@gmail.com" class="link">amathystbank@gmail.com</a></li>
+                                    <li>Teléfono: <a href="tel:+(011) 5512-6510" class="link">(011) 5512-6510</a></li>
+                                </ul>
+                            </li>
+                            <li class="texto">
+                                Toda consulta y/o reclamo será respondido dentro de un plazo máximo de diez (10) días hábiles. En caso de que pasado este plazo, el usuario no fue contestado o se encuentra disconforme 
+                                con la respuesta otorgada por el Banco o por la solución provista por el Banco podrá informar la situación frente al Banco Central de la República Argentina. El Banco Central de la República 
+                                Argentina dispone de un área de Protección al Usuario de Servicios Financieros que podrá contactar ingresando a: <a href="www.usuariosfinancieros.gob.ar" class="link">www.usuariosfinancieros.gob.ar</a>
+                            </li>
+                        </ol>
+                        <div class="imgContainer d-flex flex-wrap justify-content-center align-items-center">
+                            <div class="divContainer">
+                                <a href="https://www.bcra.gob.ar/Imagenes/BCRAyVos/Usuario_Financiero/01%20BCRA_Normas%202019.jpg" target="_blank"><img src="./assets/img/informacion/1.jpg" alt="informacion" class="imagenInfo"></a>
+                            </div>
+                            <div class="divContainer">
+                                <a href="https://www.bcra.gob.ar/Imagenes/BCRAyVos/Usuario_Financiero/02%20BCRA_Normas%202019.jpg" target="_blank"><img src="./assets/img/informacion/2.jpg" alt="informacion" class="imagenInfo"></a>
+                            </div>
+                            <div class="divContainer">
+                                <a href="https://www.bcra.gob.ar/Imagenes/BCRAyVos/Usuario_Financiero/03%20BCRA_Normas%202019.jpg" target="_blank"><img src="./assets/img/informacion/3.jpg" alt="informacion" class="imagenInfo"></a>
+                            </div>
+                            <div class="divContainer">
+                                <a href="https://www.bcra.gob.ar/Imagenes/BCRAyVos/Usuario_Financiero/04%20BCRA_Normas%202019.jpg" target="_blank"><img src="./assets/img/informacion/4.jpg" alt="informacion" class="imagenInfo"></a>
+                            </div>
+                            <div class="divContainer">
+                                <a href="https://www.bcra.gob.ar/Imagenes/BCRAyVos/Usuario_Financiero/05%20BCRA_Normas%202019.jpg" target="_blank"><img src="./assets/img/informacion/5.jpg" alt="informacion" class="imagenInfo"></a>
+                            </div>
+                            <div class="divContainer">
+                                <a href="https://www.bcra.gob.ar/Imagenes/BCRAyVos/Usuario_Financiero/06%20Afiche%20A3%20BCRA_Normas%20CGU%20Febrero_2020.jpg" target="_blank"><img src="./assets/img/informacion/6.jpg" alt="informacion" class="imagenInfo"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    
+
+                <div class="ventanaModal" :class="{'modalShow' : modal}">
+                    <div class="modalContenedor">
+                        <div class="d-flex justify-content-end">
+                            <span class="material-symbols-outlined cerrarModal" @click="modal = !modal">close</span>
+                        </div>
+                        <section class="modalFormulario">
+                            <img src="./assets/img/index/Telecommuting-pana.png" class="modalImg">
+                            <h4 class="modalTitulo">Entrar en AmathystBank</h4>
+                            <form class="formContainer">
+                                <fieldset class="formGroup">
+                                    <input type="text" name="email" id="email" v-model="email" class="inputFormulario" placeholder=" " required>
+                                    <label for="email" class="labelFormulario">Email: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <fieldset class="formGroup">
+                                    <input type="password" name="pwd" id="password" v-model="password" class="inputFormulario" placeholder=" " required>
+                                    <label for="pwd" class="labelFormulario">Contraseña: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <button @click.prevent="iniciarSesion()" class="botonFormulario mt-2">Iniciar sesión</button>
+                                <div class="mt-3">
+                                    <p class="registroFormulario mt-4">¿No estás registrado?</p>
+                                    <button @click.prevent="modal2 = !modal2, modal = !modal" class="botonFormulario">Registrarse</button>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="ventanaModal" :class="{'modalShow' : modal2}">
+                    <div class="modalContenedor">
+                        <div class="d-flex justify-content-end">
+                            <span class="material-symbols-outlined cerrarModal" @click="modal2 = !modal2">close</span>
+                        </div>
+                        <section class="modalFormulario">
+                            <img src="./assets/img/index/New employee-amico.png" class="modalImg">
+                            <h4 class="modalTitulo">Registrarse en AmathystBank</h4>
+                            <form class="formContainer">
+                                <fieldset class="formGroup">
+                                    <input type="text" name="nombre" id="nombre" v-model="nombre" class="inputFormulario" placeholder=" " required>
+                                    <label for="nombre" class="labelFormulario">Nombre: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <fieldset class="formGroup">
+                                    <input type="text" name="apellido" id="apellido" v-model="apellido" class="inputFormulario" placeholder=" " required>
+                                    <label for="apellido" class="labelFormulario">Apellido: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <fieldset class="formGroup">
+                                    <input type="text" name="emailregister" id="emailreg" v-model="email" class="inputFormulario" placeholder=" " required>
+                                    <label for="emailregister" class="labelFormulario">Email: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <fieldset class="formGroup">
+                                    <input type="password" name="pwdregister" id="passwordreg" v-model="password" class="inputFormulario" placeholder=" " required>
+                                    <label for="pwdregister" class="labelFormulario">Contraseña: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <button @click.prevent="registro()" type="submit" class="botonFormulario mt-2">Registrarse</button>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+                
+            </main>
+
+            <footer class="footer d-flex flex-column" data-aos="fade-up" data-aos-duration="2000">
+                <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C218.68,174.19 409.99,-10.34 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #4f24b4;"></path></svg></div>
+                <div class="footer2 d-flex p-4 justify-content-around flex-wrap">
+                    <div class="d-flex flex-column gap-1">
+                        <h4 class="footerTitulo pb-2">Legales</h4>
+                        <a class="footerAncor" href="https://www.bcra.gob.ar/BCRAyVos/Regimen_de_transparencia.asp" target="_blank">Régimen de transparencia</a>
+                        <a class="footerAncor" href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank">Usuario bancario</a>
+                        <a class="footerAncor" href="#">Información al usuario financiero</a>
+                        <a class="footerAncor" href="./cuenta-gratuita.html">Cuenta gratuita universal</a>
+                        <a class="footerAncor" href="./peps.html">Identificación PEP's</a>
+                        <a class="footerAncor" href="./facta.html">FACTA</a>
+                        <a class="footerAncor" href="https://autogestion.produccion.gob.ar/consumidores" target="_blank">Defensa de las y los consumidores.Reclamos</a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center gap-3">
+                        <h4 class="footerTitulo">Unite!</h4>
+                        <a href="https://www.apple.com/la/app-store/" target="_blank"><img class="imgStore" src="./assets/img/logosAppleStores.png" alt="appstore"></a>
+                        <a href="https://play.google.com/" target="_blank"><img class="imgStore" src="./assets/img/logosPlayStores.png" alt="playstore"></a>
+    
+                    </div>
+                    <div class="d-flex flex-column gap-1" id="contacto">
+                        <h4 class="footerTitulo pb-3">¡Contactanos!</h4>
+                        <p class="footerText">De Lunes a Viernes de 08 a 20 hs</p>
+                        <div class="mb-3">
+                            <p class="footerText">A nuestro centro de atención al cliente:</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+08003330500">0800-333-0500</a>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <p class="footerText">Denuncias Mastecard (crédito):</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+01145405800">(011) 4540-5800</a>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <p class="footerText">Denuncias visa (crédito):</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+01144593333">(011) 4459-3333</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="material-symbols-outlined iconColorFooter">mail</span>
+                            <a class="footerAncor2" href="mailto:amathyst@gmail.com">amathystbank@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer3 d-flex justify-content-around align-items-center flex-wrap pt-4 pb-4">
+                    <div class="d-flex gap-4">
+                        <a href="https://www.instagram.com/" target="_blank"><img class="imgFooter" src="./assets/img/iiinstaa.png" alt="instagram"></a>
+                        <a href="https://twitter.com/home" target="_blank"><img class="imgFooter" src="./assets/img/ttwiterr.png" alt="twitter"></a>
+                        <a href="https://www.facebook.com/" target="_blank"><img class="imgFooter" src="./assets/img/faceboook.png" alt="facebook"></a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <p>© 2022 Homebanking S.A. Todos los derechos Reservados.</p>
+                        <a href="#"><span class="material-symbols-outlined footerHome">house</span></a>
+                    </div>
+                    <div class="d-flex gap-3 align-items-center">
+                        <img class="cohort" src="./assets/img/mindhub.jpg" alt="mindhub">
+                        <p>Cohort 34</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

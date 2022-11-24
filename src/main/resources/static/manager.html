@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homebanking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <header class="head d-flex align-items-center justify-content-center">
+        <h1><span class="h1span">Home</span>banking</h1>
+    </header>
+    <div class="divcontenedormain d-flex flex-column align-items-center">
+        <main id="app" class="main d-flex justify-content-around p-4">
+            <div class="d-flex flex-column align-items-center">
+                <div class="contenido">
+                    <h2 class="subtitulo">Client Manager</h2>
+                    <form @submit.prevent class="form d-flex flex-column gap3">
+                        
+                        <label>Nombre:</label>
+                        <input  class="inputform mb-2" type="text" name="" id="name" placeholder="Ricardo" v-model="nombre" required>
+                        
+                        <label>Apellido:</label>
+                        <input class="inputform mb-2" type="text" name="" id="lastname" placeholder="Morales" v-model="apellido" required>
+                
+                        <label>Email:</label>
+                        <input class="inputform" type="text" name="" id="email" placeholder="example@gmail.com" v-model="email" required>
+                        
+                        <button @click="addClient" class="botonAñadir btn btn-success m-3">Añadir cliente</button>
+                        
+                    </form>
+                </div>
+            <table @submit.prevent class="table mt-4">
+                <tr>
+                    <th colspan="12" class="tabletitulo p-2 fs-5">Clientes</th>
+                </tr>
+            <tbody>
+                <tr>
+                    <th colspan="2" class="tablesubtitulo">Nombre</th>
+                    <th colspan="2" class="tablesubtitulo">Apellido</th>
+                    <th colspan="2" class="tablesubtitulo">Email</th>
+                    <th colspan="3" class=></th>
+                    <th colspan="3" class=></th>
+                </tr>
+                <tr v-for="cliente of clientes">
+                    <td colspan="2" class="tablecontenido">{{cliente.firstName}}</td>
+                        <td colspan="2" class="tablecontenido">{{cliente.lastName}}</td>
+                        <td colspan="2" class="tablecontenido">{{cliente.email}}</td>
+                        <td colspan="3" class="tablecontenido2"><button @click="deleteClient(cliente._links.client.href)" class="botonEliminar btn btn-danger ">Eliminar</button></td>
+                        <td colspan="3" class="tablecontenido2"><button class="botonEditar btn btn-warning" v-model="editar" @click="editClient(cliente._links.client.href)">Editar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <pre>{{clientes2}}</pre>
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./manager.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+.clientTitulo{
+    border-radius: 0.8rem;
+    color: white;
+    text-shadow: black 2px 2px 2px;
+}
+
+.imgMain{
+    width: 400px;
+    border-radius: 1rem 0;
+}
+
+
+.contenedorLogoUsuario{
+    width: 45px;
+    height: 45px;
+    background-color: rgb(228, 228, 228);
+    border-radius: 50%;
+}
+.logoUsuario{
+    width: 180%;
+    padding-top: 5.5px;
+}
+.textoNoPrestamos{
+    font-weight: bold;
+}
+.footerContainer{
+    gap: 25rem;
+}
+
+
+/*                      MODAL                   */
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity .25s .25s;
+    --transform: translateY(-100vh);
+    --transition: transform .5s;
+}
+.modalShow{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+    --transition: transform .5s .3s;
+}
+.modalContainer{
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+.cerrarModal{
+    cursor: pointer;
+}
+.inputRadio:focus{
+    background: #9c7de6;
+}
+.inputRadio:checked + .labelRadio{
+    font-weight: bold;
+}
+.labelForm{
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+.inputForm{
+    width: 260px !important;
+}
+/*      CARDS CUENTAS     */
+
+.cuentaCards{
+    width: 400px;
+    min-height: 185px;
+    color: white;
+    border: 1px rgb(225, 225, 225) solid;
+    border-radius: 1rem 0;
+    background: linear-gradient(45deg,#4f24b4,#ac71ff);
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 3px 2.94px 1px rgba(4,26,55,0.16);
+    z-index: 0;
+}
+
+.iconoCard{
+    text-align: center;
+    line-height: 50px;
+    margin-left: 15px;
+    color: rgb(188, 147, 255);
+    position: absolute;
+    transform: rotate(10deg);
+    left: 255px;
+    top: 30px;
+    z-index: -1;
+}
+.iconoCard> .fas{
+    font-size: 130px;
+}
+.cuentaCards:hover{
+    scale: 1.02;
+    transition: 0.5s;
+}
+
+.imgCard{
+    width: 100px;
+}
+
+.spanCard{
+    font-weight: bolder;
+}
+.botonCard{
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: white;
+    color: black;
+}
+.botonCard:hover{
+    border: 1px white solid;
+    background-color: #b595ff;
+}
+.gifCard{
+    width: 50px;
+}
+
+.botonAccounts{
+    width: 300px;
+    padding: 0.7rem;
+    border: #7b4aee 2px solid;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    transition: 0.5s;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.botonAccounts:hover{
+    scale: 1.05;
+    background-color: #7b4aee;
+    color: white;   
+}
+.textoCard{
+    line-height: 10px;
+}
+.botonAccountsEliminar{
+    width: 300px;
+    padding: 0.7rem;
+    border: #d6341e 2px solid;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    transition: 0.5s;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.botonAccountsEliminar:hover{
+    scale: 1.05;
+    background-color: #d6341e;
+    color: white;   
+}
+
+/*  CARDS PRESTAMOS     */
+.prestamoCard{
+    background-color: rgb(255, 255, 255);
+    width: 330px;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(228, 228, 228);
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 3px 2.94px 1px rgba(4,26,55,0.16);
+}
+
+.imgCardPrestamo{
+    width: 50px;
+    height: 50px;
+}
+
+.prestamoTitulo{
+    font-weight: bold;
+    background-color: rgb(236, 236, 236);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px rgb(210, 210, 210) solid;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 3px 2.94px 1px rgba(4,26,55,0.16);
+}
+.botonPrestamo{
+    width: 200px;
+    padding: 0.4rem;
+    border: #7b4aee 2px solid;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    transition: 0.5s;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+.botonPrestamo:hover{
+    scale: 1.05;
+    background-color: #7b4aee;
+    color: white;   
+}
+
+
+/*  ANIMACIONES    */ 
+.animate__animated.animate__lightSpeedInLeft {
+    --animate-duration: 1.5s;
+  }
+
+
+
+@media screen and (max-width:875px){
+    .clientTitulo{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:680px){
+    .cuentaCards{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:420px){
+    .cuentaCards{
+        width: 300px;
+    }
+    .iconoCard{
+        left: 180px;
+    }
+    .prestamoCard{
+        width: 300px;
+        height: 180px;
+    }
+} 

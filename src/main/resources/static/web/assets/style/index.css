@@ -1,0 +1,318 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(../fonts/Proxima\ Nova\ Font.otf);
+}
+
+.cartasIndex{
+  width: 90%;
+  padding: 0.6rem;
+  border-radius: 1rem;
+  box-shadow: 3px 2px 2px -1px rgba(0, 0, 0, 0.82);
+  -webkit-box-shadow: 3px 2px 2px -1px rgba(0, 0, 0, 0.82);
+  -moz-box-shadow: 3px 2px 2px -1px rgba(0, 0, 0, 0.82);
+  border: 1px rgb(221, 221, 221) solid;
+}
+.cartaColor{
+  background: linear-gradient(#8152f0, #ad89ff, #d1bdff , #e3d6ff , #ebebeb);
+}
+.cartaColor2{
+  /* background: linear-gradient(#ebebeb, #e3d6ff, #d1bdff, #ad89ff, #9c72ff, #ad89ff, #d1bdff , #e3d6ff , #ebebeb); */
+  background: radial-gradient(#9c72ff, #c0a5ff, #e3d6ff , #ebebeb);
+}
+.tituloCard{
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #683ad3;
+}
+.tituloCard2{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #683ad3;
+}
+.tituloSaludo{
+  font-size: 2rem;
+}
+.subtituloCard{
+  font-size: 1.2rem;
+}
+
+.imgCartaIndex{
+  width: 240px;
+  background-color: #c0c0c04d;
+  border-radius: 2rem;
+}
+.infoCard{
+  background-color: #e4e4e45b;
+  border-radius: 0.5rem;
+  border: 1px rgba(209, 209, 209, 0.877) solid;
+}
+.imgGif{
+  width: 60px;
+}
+.imgGif2{
+  width: 60px;
+}
+.indexTarjetaImg{
+  width: 270px;
+  margin: 1rem 0;
+  border: 1px solid rgba(214, 214, 214, 0.705);
+  border-radius: 0.4rem;
+  box-shadow: 3px 2px 2px -1px rgba(0, 0, 0, 0.82);
+  -webkit-box-shadow: 3px 2px 2px -1px rgba(0, 0, 0, 0.82);
+  -moz-box-shadow: 3px 2px 2px -1px rgba(0, 0, 0, 0.82);
+}
+h5{
+  font-weight: bold;
+}
+.contacto{
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+.contacto:hover{
+  color: #4f24b4;
+}
+
+/*         FORMULARIO          */ 
+.ventanaModal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity .6s .62s;
+  --transform: translateY(-100vh);
+  --transition: transform .8s;
+}
+.modalShow{
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+  --transform: translateY(0);
+  --transition: transform .8s .61s;
+}
+
+.modalContenedor{
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background: linear-gradient(#e2e2e2, #eeeeee, #f5f5f5 , #ffffff);;
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+.modalFormulario{
+  display: grid;
+  gap: 0.7rem;
+  place-items: center;
+  grid-auto-columns: 100%;
+}
+
+.modalImg{
+  width: 90%;
+  max-width: 300px;
+}
+.modalTitulo{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #7b4aee;
+}
+.cerrarModal{
+  cursor: pointer;
+}
+
+.formContainer{
+  display: grid;
+  gap: 1.7rem;
+}
+.formGroup{
+  position: relative;
+  --color: #5757577e;
+
+}
+.inputFormulario{
+  width: 100%;
+  background: none;
+  color: #706c6c;
+  font-size: 1rem;
+  padding: .6em .3em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color);
+  font-family: 'Proxima Nova', Medium;
+}
+.inputFormulario:focus, .inputFormulario:not(:placeholder-shown){
+  color: #4d4646;
+}
+.inputFormulario:focus + .labelFormulario, .inputFormulario:not(:placeholder-shown) + .labelFormulario{
+  transform: translateY(-12px) scale(.7);
+  transform-origin: left top;
+  color: #4f24b4;
+}
+.labelFormulario{
+  color: var(--color);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform .5s, color .3s; 
+}
+
+
+.botonFormulario{
+  height: 40px;
+  width: 250px;
+  background-color: white;
+  border: #6b3bda 2px solid;
+  border-radius: 0.5rem;
+  transition: 0.4s;
+}
+
+.botonFormulario:hover{
+  background-color: #6b3bda;
+  color: white;
+}
+.lineFormulario{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #6b3bda;
+  transform: scale(0);
+  transform: left bottom;
+  transition: transform .4s;
+}
+.inputFormulario:focus ~ .lineFormulario, .inputFormulario:not(:placeholder-shown) ~ .lineFormulario{
+  transform: scale(1);
+}
+
+
+.registroFormulario{
+  text-align: center;
+  line-height: 0px;
+  font-size: 0.9rem;
+}
+
+.warnings{
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  color: #4f24b4;
+  line-height: 0px;
+}
+
+/*           Contraseña Incorrecta                */
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity .1s .1s;
+  --transform: translateY(-100vh);
+  --transition: transform .4s;
+}
+.modalShow2{
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity .6s;
+  --transform: translateY(0);
+  --transition: transform .4s .4s;
+}
+.modalContainer{
+  margin: auto;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90%;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #6b3bda;
+  padding: 2rem 1.5rem;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+.botonModal{
+  width: 250px;
+  padding: 0.2rem;
+  border: #7b4aee 2px solid;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  transition: 0.5s;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.botonModal:hover{
+  scale: 1.05;
+  background-color: #7b4aee;
+  color: white;   
+}
+
+
+
+/*        MEDIAQUERIES       */
+@media screen and (min-width:700px){
+  .imgCartaIndex{
+    width: 350px;
+  }
+  .tituloCard2{
+    font-size: 2.85rem;
+  }
+} 
+
+@media screen and (min-width:1300px){
+  .tituloCard2{
+    font-size: 3.2rem;
+  }
+  .imgCartaIndex{
+    width: 350px;
+  }
+  .cartasIndex{
+    flex-direction: row !important;
+    height: 60vh;
+    width: 70vw;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .cartasIndex2{
+    flex-direction: row-reverse !important;
+  }
+  .cartaColor{
+    background: linear-gradient(90deg, #8152f0, #ad89ff, #d1bdff , #e3d6ff , #ebebeb);
+  }
+  .cartaColor1{
+    background: linear-gradient(270deg, #8152f0, #ad89ff, #d1bdff , #e3d6ff , #ebebeb);
+  }
+  .cartaColor2{
+    /* background: linear-gradient(90deg, #ebebeb, #e3d6ff, #d1bdff, #ad89ff, #9c72ff, #ad89ff, #d1bdff , #e3d6ff , #ebebeb); */
+    background: radial-gradient(#9c72ff, #c0a5ff, #e3d6ff , #ebebeb);
+  }
+  .indexTarjetaImg{
+    width: 400px;;
+  }
+  .imgGif2{
+    width: 90px;
+  }
+  .containerCards{
+    padding: 5rem 0 !important;
+    gap: 12rem !important;
+  }
+  .containerSaludo{
+    align-self: flex-start !important;
+  }
+
+
+} 

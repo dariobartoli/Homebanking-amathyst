@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB || cuentas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/img/logoeditado.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style/style2.css">
+    <link rel="stylesheet" href="./assets/style/accounts.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+
+<body>
+    <div id="app" class="divContenedor">
+        <header class="naav d-flex align-items-center">
+            <div class="navContainer pt-1">
+                <div class="d-flex justify-content-center align-items-center gap-1 divHeader">
+                    <img class="imgLogo" src="./assets/img/index/logoeditado3.gif" alt="logobanco">
+                    <h1 class="headerTitulo  animate__animated animate__zoomIn">Amathystbank</h1>
+                </div>
+                <div class="d-flex gap-4">
+                    <label for="menu" class="navLabel">
+                        <span class="material-symbols-outlined navIcon">menu</span>
+                    </label>
+                    <input type="checkbox" id="menu" class="navInput">
+                    <div class="navMenu  animate__animated animate__zoomIn pt-2">
+<!--                         <a href="./index.html" class="navItem">Inicio</a> -->
+                        <a href="#" id="active" class="navItem">Cuentas</a>
+                        <a href="./cards.html" class="navItem">Mis tarjetas</a>
+                        <a href="./transfers.html" class="navItem">Transferencias</a>
+                    </div>
+                    <button @Click.prevent="LogOut()" class="botones mt-1">Salir</button>
+                </div>
+
+
+            </div>
+        </header>
+        <div class="d-flex flex-column justify-content-between mainContainer">
+            <main class="main d-flex flex-column gap-4">
+                <div class="divSuperior d-flex justify-content-center align-items-center">
+                    <div class="divSuperior2 d-flex justify-content-between align-items-center flex-wrap">
+                        <h2 class="ps-3 pt-3 pb-1 subTitulo">Tus Cuentas</h2>
+                        <div class="d-flex justify-content-center align-items-center gap-2 ps-3 pe-3">
+                            <div class="d-flex justify-content-center align-items-center contenedorLogoUsuario"><img src="./assets/img/accounts/cuenta5.gif" alt="" class="logoUsuario"></div>
+                            <h3 class="clientTitulo pt-3 pb-1">{{cuentaMelba.firstName+" "+cuentaMelba.lastName}}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center flex-wrap gap-4"  data-aos="zoom-in" data-aos-duration="1500">
+                    <button @click="modal = !modal" class="botonAccounts" v-if="cuentasActivas.length<3">Agregar cuenta nueva</button>
+                    <button @click="modal2 = !modal2" class="botonAccountsEliminar" v-if="cuentasActivas.length > 1">Eliminar cuenta</button>
+                </div>
+
+                <div class="d-flex gap-5 justify-content-center flex-wrap pt-1">
+                    <div v-for="cuentas of cuentasActivas" class="cuentaCards p-3 d-flex gap-3" data-aos="flip-left" data-aos-duration="1500" data-aos-delay="200">
+                        <div class="d-flex flex-column align-items-start">
+                            <div><img src="./assets/img/accounts/id-insignia2.gif" alt="" class="gifCard"></div>
+                        </div>
+                        <div class="pt-3">
+                            <div>
+                                <h5 v-if="cuentas.type == 'CURRENT'">Cuenta Corriente</h5>
+                                <h5 v-if="cuentas.type == 'SAVING'">Cuenta de Ahorro</h5>
+                            </div>
+                            <div>
+                                <p class="textoCard">Nro de cuenta: {{cuentas.number}}</p>
+                                <p class="textoCard">Saldo: {{modificarSaldo(cuentas.balance)}}</p>
+                                <p class="textoCard">Fecha de creación: {{modificarFecha(cuentas.creationDate)}}</p>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <a :href="'/web/account.html?id=' + cuentas.id"><button class="botonCard">Lista de movimientos</button></a>
+                            </div>
+                        </div>
+                        <div class="iconoCard"><i class="fas fa-dollar-sign"></i></div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column justify-content-center align-items-center gap-4 pt-5">
+                    <h3 class="prestamoTitulo animate__animated animate__lightSpeedInLeft animate__delay-1s">Tus Prestamos:</h3>
+                    <div class="d-flex gap-5 flex-wrap justify-content-center align-items-center">
+                        <div v-for="prestamo of prestamos" >
+                            <div v-if="!prestamo.length" class="d-flex gap-2 prestamoCard animate__animated animate__flipInY animate__delay-2s">
+                                <img src="./assets/img/accounts/devolucion-de-dinero2.gif" alt="logoprestamo" class="imgCardPrestamo">
+                                <div class="d-flex flex-column flex-wrap">
+                                    <p>Tipo de prestamo: {{prestamo.name}}</p>
+                                    <p>Monto a pagar: {{modificarSaldo(prestamo.maxAmount)}}</p>
+                                    <p>Cuotas a pagar: {{prestamo.payments}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="!prestamos.length">
+                            <h4 class="textoNoPrestamos pt-3 animate__animated animate__lightSpeedInLeft animate__delay-2s">No posee prestamos, solicite uno</h4>
+                        </div>
+                    </div>
+                    <a href="./loan-application.html" class="botonPrestamo animate__animated animate__flipInX animate__delay-3s" v-if="prestamos.length < 3">Solicitar prestamo</a>
+                </div>
+
+
+
+
+                <div class="modal" :class="{'modalShow' : modal}">
+                    <div class="modalContainer">
+                        <div class="d-flex justify-content-end">
+                            <span class="material-symbols-outlined cerrarModal" @click="modal = !modal, tipoCuenta = ''">close</span>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center gap-3">
+                            <form>
+                                <fieldset>
+                                    <div class="d-flex gap-3">
+                                        <input type="radio" name="tipo" id="corriente" v-model="tipoCuenta" value="CURRENT" class="inputRadio">
+                                        <label for="tipo" class="labelRadio">Cuenta Corriente</label>
+                                    </div>
+                                    <div class="d-flex gap-3">
+                                        <input type="radio" name="tipo" id="ahorro" v-model="tipoCuenta" value="SAVING" class="inputRadio">
+                                        <label for="tipo" class="labelRadio">Cuenta de Ahorro</label>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <button @Click.prevent="crearCuenta(), modal = !modal" class="botonAccounts">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal" :class="{'modalShow' : modal2}">
+                    <div class="modalContainer">
+                        <div class="d-flex justify-content-end">
+                            <span class="material-symbols-outlined cerrarModal" @click="modal2 = !modal2, numeroCuenta = ''">close</span>
+                        </div>
+                        <form class="d-flex flex-column gap-3 justify-content-center align-items-center">
+                            <label for="cuenta" class="labelForm">Numero de cuenta que desea eliminar: </label>
+                            <select name="cuenta" id="cuenta" v-model="numeroCuenta" class="form-select inputForm">
+                                <option disabled value="">Seleccione una cuenta</option>
+                                <option :value="cuenta.number" v-for="cuenta of cuentasActivas" >{{cuenta.number}}</option>
+                            </select>
+                            <button @Click.prevent="eliminarCuenta(), modal2 = !modal2" class="botonAccountsEliminar">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </main>
+            <footer class="footer" data-aos="fade-up" data-aos-duration="2000">
+                <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C218.68,174.19 409.99,-10.34 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #4f24b4;"></path></svg></div>
+                <div class="footer2 d-flex p-4 justify-content-center flex-wrap footerContainer" >
+                    <div class="d-flex flex-column align-items-center gap-3">
+                        <h4 class="footerTitulo">Unite!</h4>
+                        <a href="https://www.apple.com/la/app-store/" target="_blank"><img class="imgStore" src="./assets/img/logosAppleStores.png" alt="appstore"></a>
+                        <a href="https://play.google.com/" target="_blank"><img class="imgStore" src="./assets/img/logosPlayStores.png" alt="playstore"></a>
+                    </div>
+                    <div class="d-flex flex-column gap-1">
+                        <h4 class="footerTitulo pb-3">¡Contactanos!</h4>
+                        <p class="footerText">De Lunes a Viernes de 08 a 20 hs</p>
+                        <div class="mb-3">
+                            <p class="footerText">A nuestro centro de atención al cliente:</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+08003330500">0800-333-0500</a>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <p class="footerText">Denuncias Mastecard (crédito):</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+01145405800">(011) 4540-5800</a>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <p class="footerText">Denuncias visa (crédito):</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+01144593333">(011) 4459-3333</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="material-symbols-outlined iconColorFooter">mail</span>
+                            <a class="footerAncor2" href="mailto:amathyst@gmail.com">amathystbank@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer3 d-flex justify-content-around align-items-center flex-wrap pt-4 pb-4">
+                    <div class="d-flex gap-4">
+                        <a href="https://www.instagram.com/" target="_blank"><img class="imgFooter" src="./assets/img/iiinstaa.png" alt="instagram"></a>
+                        <a href="https://twitter.com/home" target="_blank"><img class="imgFooter" src="./assets/img/ttwiterr.png" alt="twitter"></a>
+                        <a href="https://www.facebook.com/" target="_blank"><img class="imgFooter" src="./assets/img/faceboook.png" alt="facebook"></a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <p class="footerText2">© 2022 Homebanking S.A. Todos los derechos Reservados.</p>
+                        <a href="#"><span class="material-symbols-outlined footerHome">house</span></a>
+                    </div>
+                    <div class="d-flex gap-3 align-items-center divCohort">
+                        <img class="cohort" src="./assets/img/mindhub.jpg" alt="mindhub">
+                        <p class="footerText2">Cohort 34</p>
+                    </div>
+                </div>
+    
+    
+            </footer>
+        </div>      
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="./js/accounts.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+</html>

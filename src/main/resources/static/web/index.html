@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmathystBank</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/img/logoeditado.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style/style2.css">
+    <link rel="stylesheet" href="./assets/style/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://pattern.kivan-works.com/fonts/kredit.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+</head>
+<body class="active">
+    <div id="app" class="divContenedor">
+        <header class="naav d-flex align-items-center">
+            <div class="navContainer pt-1" >
+                <div class="d-flex justify-content-center align-items-center gap-1 divHeader">
+                    <img class="imgLogo" src="./assets/img/index/logoeditado3.gif" alt="logobanco">
+                    <h1 class="headerTitulo animate__animated animate__zoomIn" >Amathystbank</h1>
+                </div>
+                <div class="d-flex gap-4">
+                    <label for="menu" class="navLabel">
+                        <span class="material-symbols-outlined navIcon">menu</span>
+                    </label>
+                    <input type="checkbox" id="menu" class="navInput">
+                    <div class="navMenu animate__animated animate__zoomIn pt-2">
+                        <a href="#" id="active" class="navItem ">Inicio</a>
+                    </div>
+                    <button @click="modal = !modal" class="botones mt-1">Entrar</button>
+                </div>
+            </div>
+        </header>
+        <div class="d-flex flex-column mainContainer">
+            <main class="d-flex justify-content-center mainIndex">
+                <div class="d-flex flex-column align-items-center justify-content-center gap-5 pt-4 containerCards">
+
+
+                    <div class="cartasIndex d-flex flex-column gap-3 cartaColor cartasIndex2 cartaColor1" data-aos="zoom-in-down" data-aos-duration="1000">
+                        <img src="./assets/img/index/index1.png" alt="imagen" class="imgCartaIndex align-self-center" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="d-flex flex-column gap-5">
+                            <div class="align-self-center containerSaludo">
+                                <h4 class="tituloSaludo">¡Hola!</h4>
+                                <h4 class="tituloSaludo">Bienvenido a</h4>
+                                <h4 class="tituloCard2">AmathystBank</h4>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 infoCard p-2">
+                                <img src="./assets/img/index/contento2.gif" alt="gifContento" class="imgGif2">
+                                <div>
+                                    <h5 class="subtituloCard">Es simple, fácil de usar</h5>
+                                    <p>Con solo dos botones podes hacer todo lo que necesitás en AmathystBank.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cartasIndex d-flex flex-column gap-3 cartaColor" data-aos="zoom-in-down" data-aos-duration="1000">
+                        <img src="./assets/img/index/Good team-pana.png" alt="imagen" class="imgCartaIndex align-self-center" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="300">
+                        <div>
+                            <div class="text-center">
+                                <h4 class="tituloCard">Sin sorpresas</h4>
+                                <p class="subtituloCard">Somos totalmente transparentes, no hay letra chica.</p>
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <div class="d-flex align-items-center gap-3 infoCard">
+                                    <img src="./assets/img/index/verificado2.gif" alt="gifverificado" class="imgGif2">
+                                    <div>
+                                        <h5>Sin sorpresas</h5>
+                                        <p>Somos totalmente transparentes, no hay letra chica.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 infoCard">
+                                    <img src="./assets/img/index/banco2.gif" alt="gifbanco" class="imgGif2">
+                                    <div>
+                                        <h5>Aprobado</h5>
+                                        <p>Estamos autorizados y regulados por el Banco Central.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 infoCard">
+                                    <img src="./assets/img/index/etiqueta-de-precio2.gif" alt="gifprecio" class="imgGif2">
+                                    <div>
+                                        <h5>Sin costos</h5>
+                                        <p>Todas tus operaciones diarias están incluidas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cartasIndex d-flex flex-column gap-3 cartaColor cartasIndex2 cartaColor1" data-aos="zoom-in-down" data-aos-duration="1000">
+                        <img src="./assets/img/index/Multi-device targeting-rafiki.svg" alt="imagen" class="imgCartaIndex align-self-center" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="300">
+                        <div>
+                            <div class="text-center">
+                                <h4 class="tituloCard">Tu seguridad como prioridad</h4>
+                                <p class="subtituloCard">Seguimos las mejores prácticas en cyberseguridad sin complicarte tu operación diaria.</p>
+                            </div>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex align-items-center gap-3 infoCard">
+                                    <img src="./assets/img/index/escaneo-de-huellas-dactilares2.gif" alt="imagen" class="imgGif">
+                                    <div>
+                                        <h5>Biometría</h5>
+                                        <p>Nuestra tecnología te permite acceder a tu cuenta usando tu huella digital o tu cara.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 infoCard">
+                                    <img src="./assets/img/index/dolar2.gif" alt="imagen" class="imgGif">
+                                    <div>
+                                        <h5>Segundo factor</h5>
+                                        <p>Usamos un Token invisible para todas las operaciones que hagas.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 infoCard">
+                                    <img src="./assets/img/index/vista2.gif" alt="" class="imgGif">
+                                    <div>    
+                                        <h5>Personal</h5>
+                                        <p>Vas a poder ingresar desde un dispositivo a la vez a tu cuenta.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3 infoCard">
+                                    <img src="./assets/img/index/upc-2.gif" alt="" class="imgGif">
+                                    <div>
+                                        <h5>100% encriptado</h5>
+                                        <p>Todas las transacciones son encriptadas para tu mayor seguridad.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cartasIndex d-flex flex-column gap-3 cartaColor" data-aos="zoom-in-down" data-aos-duration="1000">
+                        <img src="./assets/img/index4.png" alt="imagen" class="imgCartaIndex align-self-center" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="d-flex flex-column gap-3">
+                            <div class="d-flex align-items-center gap-3 infoCard">
+                                <img src="./assets/img/index/reloj2.gif" alt="gifverificado" class="imgGif2">
+                                <div>
+                                    <a href="#contacto" class="contacto">Atencion al cliente</a>
+                                    <p>Contamos con una atencion al cliente desde las 08:00hs hasta las 20:00hs.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 infoCard">
+                                <img src="./assets/img/index/telefono2.gif" alt="gifbanco" class="imgGif2">
+                                <div>
+                                    <a href="#contacto" class="contacto">LLamanos</a>
+                                    <p>Llamanos sin costo a cualquiera de nuestros números de atención al cliente.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 infoCard">
+                                <img src="./assets/img/index/mensaje2.gif" alt="gifprecio" class="imgGif2">
+                                <div>
+                                    <a href="#contacto" class="contacto">Escribinos</a>
+                                    <p>Tambien podes escribirnos a nuestro mail amathystbank@gmail.com y te responderemos a la brevedad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cartasIndex d-flex flex-column gap-3 cartaColor2" data-aos="zoom-in-down" data-aos-duration="1000">
+                        <div class="d-flex flex-column gap-3">
+                            <div class="d-flex align-items-center gap-3 infoCard">
+                                <img src="./assets/img/index/escudo2.gif" alt="gifseguridad" class="imgGif">
+                                <div>
+                                    <h5>Segura</h5>
+                                    <p>Todas nuestras tarjetas nacen con chip y contactless.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 infoCard">
+                                <img src="./assets/img/index/copo-de-nieve2.gif" alt="gifnieve" class="imgGif">
+                                <div>
+                                    <h5>Congelar</h5>
+                                    <p>¿No encontrás tu tarjeta? Pausala desde la app y así nadie la va a poder usar.
+                                        ¿La encontraste? Volvela a activar fácilmente.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <img src="./assets/img/index/tarjeta.png" alt="imagen" class="indexTarjetaImg align-self-center" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="d-flex flex-column gap-3">
+                            <div class="d-flex align-items-center gap-3 infoCard">
+                                <img src="./assets/img/index/tarjeta-de-credito2.gif" alt="giftarjeta" class="imgGif">
+                                <div>
+                                    <h5>Cuotificá</h5>
+                                    <p>Pagá en cuotas las compras que hayas hecho en cualquier comercio. Vos elegís cuando empezás a pagar y en cuantos pagos.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 infoCard">
+                                <img src="./assets/img/index/velocimetro2.gif" alt="gifvelocimetro" class="imgGif">
+                                <div>
+                                    <h5>Limites</h5>
+                                    <p>Manejá fácilmente los límites de tu tarjeta para comprar online, en comercios físicos o para extraer plata en cajeros.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="ventanaModal" :class="{'modalShow' : modal}">
+                    <div class="modalContenedor">
+                        <div class="d-flex justify-content-end">
+                            <span class="material-symbols-outlined cerrarModal" @click="modal = !modal, email = '', password = ''">close</span>
+                        </div>
+                        <section class="modalFormulario">
+                            <img src="./assets/img/index/Telecommuting-pana.png" class="modalImg">
+                            <h4 class="modalTitulo">Entrar en AmathystBank</h4>
+                            <form class="formContainer">
+                                <fieldset class="formGroup">
+                                    <input type="text" name="email" id="email" v-model="email" class="inputFormulario" placeholder=" " required>
+                                    <label for="email" class="labelFormulario">Email: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <fieldset class="formGroup">
+                                    <input type="password" name="pwd" id="password" v-model="password" class="inputFormulario" placeholder=" " required>
+                                    <label for="pwd" class="labelFormulario">Contraseña: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <button @click.prevent="iniciarSesion()" class="botonFormulario mt-2">Iniciar sesión</button>
+                                <div class="mt-3">
+                                    <p class="registroFormulario mt-4">¿No estás registrado?</p>
+                                    <button @click.prevent="modal2 = !modal2, modal = !modal, email = '', password = ''" class="botonFormulario">Registrarse</button>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="ventanaModal" :class="{'modalShow' : modal2}">
+                    <div class="modalContenedor">
+                        <div class="d-flex justify-content-end">
+                            <span class="material-symbols-outlined cerrarModal" @click="modal2 = !modal2, email = '', password = '', nombre = '', apellido = ''">close</span>
+                        </div>
+                        <section class="modalFormulario">
+                            <img src="./assets/img/index/New employee-amico.png" class="modalImg">
+                            <h4 class="modalTitulo">Registrarse en AmathystBank</h4>
+                            <form class="formContainer">
+                                <fieldset class="formGroup">
+                                    <input type="text" name="nombre" id="nombre" required v-model="nombre" class="inputFormulario" placeholder=" " >
+                                    <label for="nombre" class="labelFormulario">Nombre: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <fieldset class="formGroup">
+                                    <input type="text" name="apellido" id="apellido" v-model="apellido" class="inputFormulario" placeholder=" " required>
+                                    <label for="apellido" class="labelFormulario">Apellido: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <fieldset class="formGroup">
+                                    <input type="email" name="emailregister" id="emailreg" v-model="email" class="inputFormulario" placeholder=" " required>
+                                    <label for="emailregister" class="labelFormulario">Email: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <fieldset class="formGroup">
+                                    <input type="password" name="pwdregister" id="passwordreg" v-model="password" class="inputFormulario" placeholder=" " required>
+                                    <label for="pwdregister" class="labelFormulario">Contraseña: </label>
+                                    <span class="lineFormulario"></span>
+                                </fieldset>
+                                <button @click.prevent="registro()" type="submit" class="botonFormulario mt-2">Registrarse</button>
+                                <p class="warnings">{{warningNombre}}</p>
+                                <p class="warnings">{{warningApellido}}</p>
+                                <p class="warnings">{{warningEmail}}</p>
+                                <p class="warnings">{{warningContraseña}}</p>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+
+
+                <div class="modal" :class="{'modalShow2' : modal3}">
+                    <div class="modalContainer">
+                        <div>
+                            <h5>La contraseña debe tener: </h5>
+                            <ul>
+                                <li>minimo 8 carácteres</li>
+                                <li>máximo 15 carácteres</li>
+                                <li>incluir por lo menos una minúscula</li>
+                                <li>incluir por lo menos una mayúscula</li>
+                                <li>incluir por lo menos un número</li>
+                                <li>incluir por lo menos un simbolo</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button @Click="modal3 = !modal3" class="botonModal">Entendido</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </main>
+
+            <footer class="footer d-flex flex-column" data-aos="fade-up" data-aos-duration="2000">
+                <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C218.68,174.19 409.99,-10.34 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #4f24b4;"></path></svg></div>
+                <div class="footer2 d-flex p-4 justify-content-around flex-wrap">
+                    <div class="d-flex flex-column gap-1">
+                        <h4 class="footerTitulo pb-2">Legales</h4>
+                        <a class="footerAncor" href="https://www.bcra.gob.ar/BCRAyVos/Regimen_de_transparencia.asp" target="_blank">Régimen de transparencia</a>
+                        <a class="footerAncor" href="https://www.bcra.gob.ar/BCRAyVos/Usuarios_Financieros.asp" target="_blank">Usuario bancario</a>
+                        <a class="footerAncor" href="./usuario-financiero.html">Información al usuario financiero</a>
+                        <a class="footerAncor" href="./cuenta-gratuita.html">Cuenta gratuita universal</a>
+                        <a class="footerAncor" href="./peps.html">Identificación PEP's</a>
+                        <a class="footerAncor" href="./facta.html">FACTA</a>
+                        <a class="footerAncor" href="https://autogestion.produccion.gob.ar/consumidores" target="_blank">Defensa de las y los consumidores.Reclamos</a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center gap-3">
+                        <h4 class="footerTitulo">Unite!</h4>
+                        <a href="https://www.apple.com/la/app-store/" target="_blank"><img class="imgStore" src="./assets/img/logosAppleStores.png" alt="appstore"></a>
+                        <a href="https://play.google.com/" target="_blank"><img class="imgStore" src="./assets/img/logosPlayStores.png" alt="playstore"></a>
+    
+                    </div>
+                    <div class="d-flex flex-column gap-1" id="contacto">
+                        <h4 class="footerTitulo pb-3">¡Contactanos!</h4>
+                        <p class="footerText">De Lunes a Viernes de 08 a 20 hs</p>
+                        <div class="mb-3">
+                            <p class="footerText">A nuestro centro de atención al cliente:</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+08003330500">0800-333-0500</a>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <p class="footerText">Denuncias Mastecard (crédito):</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+01145405800">(011) 4540-5800</a>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <p class="footerText">Denuncias visa (crédito):</p>
+                            <div class="d-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined iconColorFooter">call</span>
+                                <a class="footerAncor2" href="tel:+01144593333">(011) 4459-3333</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="material-symbols-outlined iconColorFooter">mail</span>
+                            <a class="footerAncor2" href="mailto:amathyst@gmail.com">amathystbank@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer3 d-flex justify-content-around align-items-center flex-wrap pt-4 pb-4">
+                    <div class="d-flex gap-4">
+                        <a href="https://www.instagram.com/" target="_blank"><img class="imgFooter" src="./assets/img/iiinstaa.png" alt="instagram"></a>
+                        <a href="https://twitter.com/home" target="_blank"><img class="imgFooter" src="./assets/img/ttwiterr.png" alt="twitter"></a>
+                        <a href="https://www.facebook.com/" target="_blank"><img class="imgFooter" src="./assets/img/faceboook.png" alt="facebook"></a>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <p>© 2022 Homebanking S.A. Todos los derechos Reservados.</p>
+                        <a href="#"><span class="material-symbols-outlined footerHome">house</span></a>
+                    </div>
+                    <div class="d-flex gap-3 align-items-center">
+                        <img class="cohort" src="./assets/img/mindhub.jpg" alt="mindhub">
+                        <p>Cohort 34</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="./js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

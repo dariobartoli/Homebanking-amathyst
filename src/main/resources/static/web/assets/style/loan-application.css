@@ -1,0 +1,78 @@
+.contenedorFormulario{
+    background-color: white;
+    width: 90vw;
+    max-width: 675px;
+    min-height: 20vh;
+    border: rgb(236, 236, 236) 1px solid;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(20, 20, 20, 0.16);
+    box-shadow: 0 3px 2.94px 1px rgba(3, 3, 3, 0.16);
+}
+.imgPrestamo{
+    width: 90vw;
+    max-width: 450px;
+    border-radius: 0.5rem;
+    border: 3px #7b4aee solid;
+    background-color: white;
+}
+.contenedorTitulo{
+    background-color: rgb(226, 226, 226);
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+.titulos{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7b4aee;
+}
+.labelForm{
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+.inputForm{
+    width: 240px !important;
+    height: 38px;
+}
+.botonForm{
+    width: 75%;
+    padding: 0.2rem;
+    border: #7b4aee 2px solid;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    transition: 0.5s;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.botonForm:hover{
+scale: 1.05;
+background-color: #7b4aee;
+color: white;   
+}
+.saldo{
+    text-align: end;
+    font-weight: bold;
+    color: rgb(53, 155, 53);
+}
+.containerSaldos{
+    background-color: rgb(226, 226, 226);
+    width: 100%;
+    padding-top: 0.9rem;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    border-top: 1px solid rgb(218, 218, 218);
+}
+.cuotas{
+    font-weight: 600;
+    color: #7b4aee;
+}
+.footerContainer{
+    gap: 25rem;
+}
+.footer{
+    margin-top: 5rem;
+}
+@media screen and (min-width:1297px){
+    .cuerpoFormulario{
+        gap: 10rem !important;
+    }
+} 

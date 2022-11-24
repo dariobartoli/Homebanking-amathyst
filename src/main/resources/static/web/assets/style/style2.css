@@ -1,0 +1,335 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url(../fonts/Proxima\ Nova\ Font.otf);
+}
+
+/****colores
+811EFF
+9A55FD
+A66FFC
+7C25F0
+944BFF
+*/
+
+/* html, body{
+    width:100%;
+    overflow-x:hidden;
+    } */
+body{
+    font-family: 'Proxima Nova', Medium;
+}
+
+
+/*     HEADER         */
+.headerTitulo{
+    font-size: 2.5rem;
+    color: #6337ca;
+    font-weight: bolder;
+/*     background: -webkit-linear-gradient(#7A0DA9,#a80f54);
+    -webkit-background-clip: text;
+    color: transparent; */
+}
+.imgLogo{
+    width: 84px;
+}
+
+
+
+/*      NAV   */
+.naav{
+    width: 100%;
+    min-height: 8vh;
+    border-bottom: 2px solid rgb(225, 225, 225);
+    background: linear-gradient(0deg, rgba(223,223,223,1) 0%, rgba(255,255,255,1) 99%);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.navContainer{
+    display: flex;
+    height: 100%;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.navLogo{
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.navLabel, .navInput{
+    display: none;
+}
+.navMenu{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+}
+.navItem{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+.navItem::after{
+    content: "";
+    display: block;
+    background-color: #6337ca;
+    width: 90%;
+    margin-top: 3px;
+    height: 3px;
+    clip-path: var(--clippy);
+    transition: clip-path .5s;
+}
+.navItem:hover{
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    color: #6337ca;
+}
+#active{
+    color: #4c25a7;
+    font-weight: 600;
+}
+
+
+/*           BONOTES           */
+.botones{
+    padding: 0.1rem 1rem;
+    border-radius: 0.5rem;
+    border: #6b3bda 2px solid;
+    transition: 0.4s;
+    
+  }
+  .botones:hover{
+    background-color: #6b3bda;
+    color: white;
+  }
+
+
+/*           MAIN        */
+.mainContainer{
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(68,960,454)'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%23FFFFFF'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='533' height='444.2' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.09'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.main{
+    min-height: 75vh;
+}
+
+.divSuperior{
+    background-color: #6337ca;
+    min-height: 9vh;
+}
+.divSuperior2{
+    width: 80%;
+}
+
+.subTitulo{
+    color: white;
+    text-shadow: black 2px 2px 2px;
+    font-size: 2.4rem;
+}
+
+
+
+
+/*      FOOTER     */
+.footer{
+    font-size: 1.3rem;
+}
+.footer2{
+    background-color: #4f24b4;
+}
+.footer3{
+    min-height: 10vh;
+    background-color: #919191;
+}
+
+.imgStore{
+    width: 160px;
+}
+.imgStore:hover{
+    scale: 1.02;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.footerTitulo{
+    color: white;
+    font-size: 2rem;
+    text-shadow: black 2px 2px 2px;
+}
+.footerAncor{
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    font-weight: 100;
+    text-shadow: black 1px 1px 1px;
+}
+.footerAncor:hover{
+    color: rgb(245, 245, 245);
+}
+.footerText{
+    font-size: 1rem;
+    color: rgb(245, 245, 245);
+    line-height: 10px;
+    text-shadow: black 1px 1px 1px;
+}
+.footerText2{
+    color: black;
+}
+
+.footerAncor2{
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+    text-shadow: black 1px 1px 1px;
+    font-size: 1.5rem;
+}
+.footerAncor2:hover{
+    color: rgb(245, 245, 245);
+}
+.iconColorFooter{
+    color: white;
+    text-shadow: black 2px 2px 2px;
+}
+
+.imgFooter, .cohort{
+    width: 40px;
+}
+.imgFooter:hover{
+    scale: 1.05;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.footerHome{
+    padding: 0.3rem;
+    background-color: #696969;
+    border-radius: 50%;
+    color: black;
+}
+.footerHome:hover{
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.cohort{
+    border-radius: 50%;
+}
+
+
+
+/*        MEDIA QUERIES      */
+@media screen and (max-width:1360px){
+    .footerTitulo{
+        font-size: 1.4rem;
+    }
+    .footerText{
+        font-size: 0.8rem;
+    }
+    .footerAncor{
+        font-size: 0.8rem;
+    }
+    .footerAncor2{
+        font-size: 1rem;
+    }
+    .imgStore{
+        width: 130px;
+    }
+
+}
+
+@media screen and (max-width:1189px){
+    .headerTitulo{
+        font-size: 2.8rem;
+    }
+    .footerText2{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:991px){
+    .imgLogo{
+        width: 70px;
+    }
+    .divContenedor{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:875px){
+    .subTitulo{
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width:700px){
+    .navLabel{
+        display: block;
+        cursor: pointer;
+    }
+    .navMenu{
+        position: fixed;
+        top: 8vh;
+        bottom: 0;
+        background-color: #7241e6;
+        width: 100vw;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        clip-path: circle(0 at center);
+        transition: clip-path 1s ease-in-out;
+        z-index: 1;
+    }
+    .navInput:checked + .navMenu {
+        clip-path: circle(100% at center);
+        transition: clip-path 1s ease-in-out;
+    }
+    .cuentaCards{
+        position:static;
+    }
+    #active{
+        color: black;
+        font-weight: 600;
+    }
+}
+
+
+
+@media screen and (max-width:680px){
+    .headerTitulo{
+        font-size: 1.8rem;
+    }
+    .imgLogo{
+        width: 50px;
+    }
+    .footer3{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+
+@media screen and (max-width:420px){
+    .footer2{
+        flex-direction: column;
+        gap: 2rem;
+    }
+} 
+
+@media screen and (max-width:410px){
+    .navMenu{
+        top: 10vh
+    }
+} 
